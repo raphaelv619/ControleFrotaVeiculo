@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F221D81-4E5F-450A-B252-DC7BCC10F01C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ControleFrotaDeVeiculos</RootNamespace>
+    <AssemblyName>ControleFrotaDeVeiculos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="models\EntradaSaida.cs" />
+    <Compile Include="models\Viagens.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="screens\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Adm.cs" />
+    <Compile Include="screens\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screens\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\DAL.cs" />
+    <Compile Include="models\BLL.cs" />
+    <Compile Include="models\Motorista.cs" />
+    <Compile Include="models\Program.cs" />
+    <Compile Include="models\UltimoAdm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="models\Veiculos.cs" />
+    <Compile Include="UserControls\UserControlMotoristas\UserControlCadastroMotorista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlMotoristas\UserControlCadastroMotorista.Designer.cs">
+      <DependentUpon>UserControlCadastroMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlMotoristas\UserControlListMotorista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlMotoristas\UserControlListMotorista.Designer.cs">
+      <DependentUpon>UserControlListMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlCadastroEntradaSaida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlCadastroEntradaSaida.Designer.cs">
+      <DependentUpon>UserControlCadastroEntradaSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlEntradaSaida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlEntradaSaida.Designer.cs">
+      <DependentUpon>UserControlEntradaSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlListEntradaSaida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsEntradaSaida\UserControlListEntradaSaida.Designer.cs">
+      <DependentUpon>UserControlListEntradaSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlCadastroVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlCadastroVehicle.Designer.cs">
+      <DependentUpon>UserControlCadastroVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlMotoristas\UserControlMotorista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlMotoristas\UserControlMotorista.Designer.cs">
+      <DependentUpon>UserControlMotorista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlListVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlListVehicle.Designer.cs">
+      <DependentUpon>UserControlListVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlVehicles\UserControlVehicle.Designer.cs">
+      <DependentUpon>UserControlVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlCadastroViagens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlCadastroViagens.Designer.cs">
+      <DependentUpon>UserControlCadastroViagens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlListViagens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlListViagens.Designer.cs">
+      <DependentUpon>UserControlListViagens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlViagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlsViagens\UserControlViagem.Designer.cs">
+      <DependentUpon>UserControlViagem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="screens\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screens\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlMotoristas\UserControlCadastroMotorista.resx">
+      <DependentUpon>UserControlCadastroMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlMotoristas\UserControlListMotorista.resx">
+      <DependentUpon>UserControlListMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsEntradaSaida\UserControlCadastroEntradaSaida.resx">
+      <DependentUpon>UserControlCadastroEntradaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsEntradaSaida\UserControlEntradaSaida.resx">
+      <DependentUpon>UserControlEntradaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsEntradaSaida\UserControlListEntradaSaida.resx">
+      <DependentUpon>UserControlListEntradaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlVehicles\UserControlCadastroVehicle.resx">
+      <DependentUpon>UserControlCadastroVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlMotoristas\UserControlMotorista.resx">
+      <DependentUpon>UserControlMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlVehicles\UserControlListVehicle.resx">
+      <DependentUpon>UserControlListVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlVehicles\UserControlVehicle.resx">
+      <DependentUpon>UserControlVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsViagens\UserControlCadastroViagens.resx">
+      <DependentUpon>UserControlCadastroViagens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsViagens\UserControlListViagens.resx">
+      <DependentUpon>UserControlListViagens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlsViagens\UserControlViagem.resx">
+      <DependentUpon>UserControlViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipYellow_manned.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_transparent1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vehicles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viagens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entradasaida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manutencao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abastecimento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pneu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relatórios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_konKuwpcGOoA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notificacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sair1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infomotorista.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
