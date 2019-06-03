@@ -17,7 +17,7 @@ namespace ControleFrotaDeVeiculos.models
 
         public DAL ()
         {
-            _conexaoMySQL = "server=localhost;user id=root;password=123456;database=frotaa";
+            _conexaoMySQL = "server=localhost;user id=root;password=123456;database=frota";
         }
 
         //Veículos
